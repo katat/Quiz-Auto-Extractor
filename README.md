@@ -2,9 +2,11 @@ Quiz-Auto-Extractor
 ===================
 
 Summary:
+
 Extract the contents from quiz HTML documents and separate them into different question items and their corresponding answers.
 
 Instruction:
+
 The test/docs are documented with the various formats that need to deal with for auto extraction.
 The standard format that can be easily extracted is the good.standard.html file. The other files can be compared with this file to understand what kinds of odd formats needs to be dealt with.
 
