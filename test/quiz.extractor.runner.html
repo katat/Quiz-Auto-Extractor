@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Jasmine Spec Runner: Jasmine Core</title>
+
+<link rel="shortcut icon" type="image/png"
+	href="../lib/opensource/jasmine/images/jasmine_favicon.png">
+
+<link href="../lib/opensource/jasmine-1.3.1/lib/jasmine-1.3.1/jasmine.css"
+	rel="stylesheet" />
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        jax: ["input/MathML","output/HTML-CSS","output/NativeMML"],
+        extensions: ["mml2jax.js"],
+        skipStartupTypeset: true
+    });
+</script>
+<script type="text/javascript" src="../lib/opensource/MathJax/MathJax.js?delayStartupUntil=configured"></script>
+<script type="text/javascript"
+	src="../lib/opensource/jasmine/lib/jasmine-core/jasmine.js"></script>
+<script type="text/javascript" src="../lib/opensource/jquery/jquery.js"></script>
+<script type="text/javascript">
+	// yes, really keep this here to keep us honest, but only for jasmine's own runner! [xw]
+	undefined = "diz be undefined yo";
+</script>
+<!-- include source files here... -->
+<script type="text/javascript"
+	src="../lib/opensource/jasmine-1.3.1/lib/jasmine-1.3.1/jasmine.js"></script>
+<script type="text/javascript"
+	src="../lib/opensource/jasmine-1.3.1/lib/jasmine-1.3.1/jasmine-html.js"></script>
+
+<script src="../lib/opensource/requirejs/require.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		require(['/test/require.config.js'], function(e){
+			require([
+                'test/specs/quiz.auto.extract.spec'], function() {
+				var jasmineEnv = jasmine.getEnv();
+				jasmineEnv.updateInterval = 1000;
+
+				var htmlReporter = new jasmine.HtmlReporter();
+
+				jasmineEnv.addReporter(htmlReporter);
+
+				jasmineEnv.specFilter = function(spec) {
+					return htmlReporter.specFilter(spec);
+				};
+
+                execJasmine();
+
+				function execJasmine() {
+					jasmineEnv.execute();
+				}
+			});
+			
+		});
+	});
+</script>
+</head>
+
+<body>
+
+</body>
+</html>
